@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+ <!-- test one-->
+<div id="group-word-3"></div>
+<div id="group-word-4"></div>
+<div id="group-word-5"></div>
+<br/>
+<br/>
+<br/>
+ <!-- test two-->
+<div id="string_one">foo(bar)</div>
+
+</body>
+</html>
+<script>
+var array_1 = ['AMOR', 'XISELA', 'JAMON', 'ROMA', 'OMAR', 'MORA', 'ESPONJA', 'RAMO', 'JAPONES', 'ARMO', 'MOJAN',
+'MARO', 'ORAM', 'MONJA', 'ALEXIS'];
+var grpone='';;var grptwo ='';var grpthree ='';
+var array_cleaned = array_1.filter( function( element ) {
+  if(element.length == 4) grpone = grpone +' - '+ element;
+  else if(element.length == 5) grptwo = grptwo +' - '+ element;
+  else if(element.length == 6) grpthree = grpthree +' - '+ element;
+});
+
+  document.getElementById("group-word-3").innerHTML = grpone;
+  document.getElementById("group-word-4").innerHTML = grptwo;
+  document.getElementById("group-word-5").innerHTML = grpthree;
+  
+
+  // start test 2
+var string_one = document.getElementById("string_one").innerHTML ;
+string_one = string_one.replace(")","");
+string_one = string_one.replace("(","");
+
+ function reverseString(str) {
+    var splitString = str.split(""); 
+    var reverseArray = splitString.reverse();
+    var joinArray = reverseArray.join(""); 
+    return joinArray;
+}
+document.getElementById("string_one").innerHTML = reverseString(string_one);
+</script>
